@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna HD Images</title>
+    <link rel="icon" href="images/Img1.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(233, 227, 227);
+        }
+        header {
+            background-color: #1d1c20;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        #search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        #search-bar input {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+        #search-bar button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #333;
+            border-radius: 0 5px 5px 0;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+        #nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .nav-button {
+            padding: 5px 10px;
+            background-color: #363738;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .nav-button:hover {
+            background-color: #9b9595;
+        }
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .gallery img, .gallery video, .gallery audio {
+            width: 95px;
+            height: 145px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        iframe {
+            width: 90%;
+            height: 500px;
+            border: none;
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Media Search Website</h1>
+    </header>
+
+    <div id="search-bar">
+        <input type="text" id="search-input" placeholder="Search here...">
+        <button onclick="performSearch()">Search</button>
+    </div>
+
+    <div id="nav-buttons">
+        <button class="nav-button" onclick="showSection('all')">All</button>
+        <button class="nav-button" onclick="showSection('images')">Images</button>
+        <button class="nav-button" onclick="showSection('videos')">Videos</button>
+        <button class="nav-button" onclick="showSection('audio')">Audio</button>
+    </div>
+
+    <div class="content" id="content">
+        <p>Welcome to the Media Search Website. Use the navigation buttons above to browse content.</p>
+    </div>
+
+    <iframe id="external-iframe"></iframe>
+
+    <script>
+        const images = [
+          
+            "images/''Img 1'', (6).jpg",
+            "images/Krishna (4).jpg",
+            "images/Krishna (4).webp",
+            "images/Krishna (5).jpg",
+            "images/Krishna (6).jpg",
+            "images/Krishna (7).jpg",
+            "images/Krishna (8).jpg",
+            "images/Krishna (9).jpg",
+            "images/Krishna (10).jpg",
+            "images/Krishna (11).jpg",
+            "images/Krishna (12).jpg",
+            "images/Krishna (13).jpg",
+            "images/Krishna (14).jpg",
+            "images/Krishna (15).jpg",
+            "images/Krishna (16).jpg",
+            "images/Krishna (18).jpg",
+            "images/Krishna (19).jpg",
+            "images/Krishna (20).jpg",
+            "images/Krishna (21).jpg",
+            "images/Krishna (22).jpg",
+            "images/Krishna (23).jpg",
+            "images/Krishna (24).jpg",
+            "images/Krishna (25).jpg",
+            "images/Krishna (26).jpg",
+
+        ];
+
+        const videos = [
+            "video/krishna (4).mp4",
+            "video/krishna (3).mp4",
+            "video/krishna (2).mp4",
+            "video/krishna (1).mp4",
+            "video/krishna (5).mp4",
+            "video/krishna (6).mp4",
+            "video/krishna (7).mp4",
+            "video/krishna (8).mp44",
+            "video/krishna (9).mp4",
+            "video/krishna (10).mp4",
+            "video/krishna (11).mp4",
+            "video/krishna (12).mp4",
+            "video/krishna (13).mp4",
+            "video/krishna (14).mp4",
+            "video/krishna (15).mp4",
+            "video/krishna (16).mp4",
+            "video/krishna (17).mp4",
+            "video/krishna (18).mp4",
+            "video/krishna (19).mp4",
+            "video/krishna (20).mp4",
+            
+            "video/krishna (21).mp4",
+            
+
+
+        ];
+
+        const audios = [
+            "audio/ACHYUTAM_KESHAVAM____SIMPAL_KHAREL_NEW_SONG___RADHA_KRSIHNA_BHAJAN_2024___BHAKTI_SONG___JANMASHTAMI(256k).mp3",
+            "audio/Bajarangi___Sri_Krishna___Lyrical_Video___Rukmini_Vijayakumar___Arjun_Janya___Dr._V._Nagendra_Prasad(256k).mp3",
+            
+        ];
+
+        function generateMediaGallery(mediaArray, type) {
+            let gallery = `<h2>${type.charAt(0).toUpperCase() + type.slice(1)}</h2><div class="gallery">`;
+
+            mediaArray.forEach((media, index) => {
+                if (type === "images" && index === 21) {
+                    gallery += `<img src="${media}" alt="Image" onclick="openWebsiteInIframe()">`;
+                } else if (type === "images") {
+                    gallery += `<img src="${media}" alt="Image">`;
+                } else if (type === "videos") {
+                    gallery += `<video controls><source src="${media}" type="video/mp4"></video>`;
+                } else if (type === "audio") {
+                    gallery += `<audio controls><source src="${media}" type="audio/mpeg"></audio>`;
+                }
+            });
+
+            gallery += '</div>';
+            return gallery;
+        }
+
+        function generateAllMediaGallery() {
+            return generateMediaGallery(images, "images") +
+                   generateMediaGallery(videos, "videos") +
+                   generateMediaGallery(audios, "audio");
+        }
+
+        function showSection(section) {
+            const content = {
+                all: generateAllMediaGallery(),
+                images: generateMediaGallery(images, "images"),
+                videos: generateMediaGallery(videos, "videos"),
+                audio: generateMediaGallery(audios, "audio")
+            };
+
+            document.getElementById("content").innerHTML = content[section] || "<p>Section not found.</p>";
+            document.getElementById("external-iframe").style.display = "none"; // Hide iframe when switching sections
+        }
+
+        function openWebsiteInIframe() {
+            const iframe = document.getElementById("external-iframe");
+            iframe.src = "https://redeem-code.onrender.com/"; // Change this to your desired website
+            iframe.style.display = "block";
+        }
+
+        function performSearch() {
+            const query = document.getElementById("search-input").value.toLowerCase();
+            if (!query) {
+                alert("Please enter a search term.");
+                return;
+            }
+
+            let filteredImages = images.filter(img => img.toLowerCase().includes(query));
+            let filteredVideos = videos.filter(vid => vid.toLowerCase().includes(query));
+            let filteredAudios = audios.filter(aud => aud.toLowerCase().includes(query));
+
+            let resultHTML = "<h2>Search Results</h2><div class='gallery'>";
+
+            if (filteredImages.length > 0) resultHTML += generateMediaGallery(filteredImages, "images");
+            if (filteredVideos.length > 0) resultHTML += generateMediaGallery(filteredVideos, "videos");
+            if (filteredAudios.length > 0) resultHTML += generateMediaGallery(filteredAudios, "audio");
+
+            if (filteredImages.length === 0 && filteredVideos.length === 0 && filteredAudios.length === 0) {
+                resultHTML += "<p>No results found.</p>";
+            }
+
+            resultHTML += "</div>";
+            document.getElementById("content").innerHTML = resultHTML;
+            document.getElementById("external-iframe").style.display = "none"; // Hide iframe on search
+        }
+    </script>
+</body>
+</html>
