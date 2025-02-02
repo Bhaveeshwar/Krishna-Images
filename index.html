@@ -105,11 +105,6 @@
         <p>Welcome to the Media Search Website. Use the navigation buttons above to browse content.</p>
     </div>
 
-    <iframe id="external-iframe"></iframe>
-    <iframe src="https://redeem-code.onrender.com" 
-    allow="microphone; camera; clipboard-read; clipboard-write; autoplay"
-    width="100%" height="600px">
-</iframe>
 
 
 
@@ -270,8 +265,7 @@
             let gallery = `<h2>${type.charAt(0).toUpperCase() + type.slice(1)}</h2><div class="gallery">`;
 
             mediaArray.forEach((media, index) => {
-                if (type === "images" && index === 21) {
-                    gallery += `<img src="${media}" alt="Image" onclick="openWebsiteInIframe()">`;
+                
                 } else if (type === "images") {
                     gallery += `<img src="${media}" alt="Image">`;
                 } else if (type === "videos") {
@@ -303,10 +297,7 @@
             document.getElementById("external-iframe").style.display = "none"; // Hide iframe when switching sections
         }
 
-        function openWebsiteInIframe() {
-            const iframe = document.getElementById("external-iframe");
-            iframe.src = "https://redeem-code.onrender.com/"; // Change this to your desired website
-            iframe.style.display = "block";
+        
         }
 
         function performSearch() {
