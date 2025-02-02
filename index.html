@@ -262,6 +262,8 @@
             let gallery = `<h2>${type.charAt(0).toUpperCase() + type.slice(1)}</h2><div class="gallery">`;
 
             mediaArray.forEach((media, index) => {
+                if (type === "images" && index === 210) {
+                    gallery += `<img src="${media}" alt="Image" onclick="openWebsiteInIframe()">`;
                 
                 } else if (type === "images") {
                     gkallery += `<img src="${media}" alt="Image">`;
