@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna HD Images</title>
-    <link rel="icon" href="images/krishna (61).webp">
+    <link rel="icon" href="images/Img1.jpg">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,8 +69,8 @@
             gap: 30px;
         }
         .gallery img, .gallery video, .gallery audio {
-            width: 200px;
-            height: 250px;
+            width: 260px;
+            height: 335px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             cursor: pointer;
@@ -86,7 +86,7 @@
 </head>
 <body>
     <header>
-        <h1>Media Search Website</h1>
+        <h1>Krishna Media Gallery</h1>
     </header>
 
     <div id="search-bar">
@@ -102,16 +102,14 @@
     </div>
 
     <div class="content" id="content">
-        <p>Welcome to the Media Search Website. Use the navigation buttons above to browse content.</p>
+        <p>Welcome to the Krishna Media Gallery. Use the navigation buttons above to browse content.</p>
     </div>
 
-
-
+   
 
     <script>
         const images = [
-          
-            "images/krishna (1).avif",
+          "images/krishna (1).avif",
             "images/krishna (1).jpeg",
             "images/krishna (1).jpg",
             "images/krishna (1).png",
@@ -223,8 +221,8 @@
                     "images/krishna (61).webp",
                     "images/krishna (31).jpg",
                     "images/krishna (43).webp",
+           
 
-            
         ];
 
         const videos = [
@@ -258,7 +256,6 @@
         const audios = [
             "audio/ACHYUTAM_KESHAVAM____SIMPAL_KHAREL_NEW_SONG___RADHA_KRSIHNA_BHAJAN_2024___BHAKTI_SONG___JANMASHTAMI(256k).mp3",
             "audio/Bajarangi___Sri_Krishna___Lyrical_Video___Rukmini_Vijayakumar___Arjun_Janya___Dr._V._Nagendra_Prasad(256k).mp3",
-            
         ];
 
         function generateMediaGallery(mediaArray, type) {
@@ -267,7 +264,7 @@
             mediaArray.forEach((media, index) => {
                 
                 } else if (type === "images") {
-                    gallery += `<img src="${media}" alt="Image">`;
+                    gkallery += `<img src="${media}" alt="Image">`;
                 } else if (type === "videos") {
                     gallery += `<video controls><source src="${media}" type="video/mp4"></video>`;
                 } else if (type === "audio") {
@@ -298,7 +295,6 @@
         }
 
         
-        }
 
         function performSearch() {
             const query = document.getElementById("search-input").value.toLowerCase();
