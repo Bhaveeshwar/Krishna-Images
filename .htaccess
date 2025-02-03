@@ -1,9 +1,0 @@
-<FilesMatch "\.(html|js|css|php)$">
-    Order allow,deny
-    Deny from all
-    RewriteEngine on
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https://krishna-images.onrender.com/.*$ [NC]
-RewriteRule \.(jpg|jpeg|png|gif|webp|mp4|mp3)$ - [F,NC]
-
-</FilesMatch>
