@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna HD Images</title>
-    <link rel="icon" href="images/Img1.jpg">
+    <link rel="icon" href="images/krishna (61).webp">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,24 +69,18 @@
             gap: 30px;
         }
         .gallery img, .gallery video, .gallery audio {
-            width: 260px;
-            height: 335px;
+            width: 325px;
+            height: 410px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             cursor: pointer;
         }
-        iframe {
-            width: 90%;
-            height: 500px;
-            border: none;
-            display: none;
-            margin-top: 20px;
-        }
+        
     </style>
 </head>
 <body>
     <header>
-        <h1>Krishna Media Gallery</h1>
+        <h1>Krishna Media Collections </h1>
     </header>
 
     <div id="search-bar">
@@ -102,14 +96,17 @@
     </div>
 
     <div class="content" id="content">
-        <p>Welcome to the Krishna Media Gallery. Use the navigation buttons above to browse content.</p>
+        <p>Welcome to the Krishna Media Collections. Use the navigation buttons above to browse content.</p>
     </div>
 
-   
+    
+
+
 
     <script>
         const images = [
-          "images/krishna (1).avif",
+          
+            "images/krishna (1).avif",
             "images/krishna (1).jpeg",
             "images/krishna (1).jpg",
             "images/krishna (1).png",
@@ -221,8 +218,8 @@
                     "images/krishna (61).webp",
                     "images/krishna (31).jpg",
                     "images/krishna (43).webp",
-           
 
+            
         ];
 
         const videos = [
@@ -256,17 +253,36 @@
         const audios = [
             "audio/ACHYUTAM_KESHAVAM____SIMPAL_KHAREL_NEW_SONG___RADHA_KRSIHNA_BHAJAN_2024___BHAKTI_SONG___JANMASHTAMI(256k).mp3",
             "audio/Bajarangi___Sri_Krishna___Lyrical_Video___Rukmini_Vijayakumar___Arjun_Janya___Dr._V._Nagendra_Prasad(256k).mp3",
+            "audio/Chakradhari_I_Goosebumps_guaranteed_🔥🔥___Vinay_Katoch_Ft_Siddharth___Epic_Krishna_Song(256k).mp3",
+            "audio/Jaya_Janardana_krishna_radhika_pathe(256k).mp3",
+            "audio/Kano_Dwarika_Vado___Rajesh_Ahir(256k).mp3",
+            "audio/Krish_Theme___Krishna_Theme____Shri_Krishna_Govinda_Hare_Murari_Soulful_Flute_Cover_by_Kiran_Baral(256k).mp3",
+            "audio/Radha_Kaise_Na_Jale_-_8K_4K_Music_Video___Navratri_Special___Aamir_Khan___Asha_B,_Udit_N___Lagaan(256k).mp3",
+            "audio/RADHA_RANI_LAGE____SIMPAL_KHAREL_NEW_SONG___RADHA_KRISHNA_BHAJAN_2023___BHAKTI_SONG(256k).mp3",
+            "audio/Radhakrishna_Naamawali_Chant(256k).mp3",
+            "audio/Samay_Samjhayega_Full_Song___Tum_Prem_Ho_Sad___Radha_Krishn___LOFI___MOhit_lalwani__Surya_Raj_Kamal(256k).mp3",
+            "audio/Shree_Krishna_Mashup___Visual_Galaxy___Radha_Krishna_Songs___Tulsi_Kumar___Shri_Krishna_Mashup_2023(256k).mp3",
+            "audio/Shri_Hari_Storm_ll_Most_Powerful_Mantra_Of_Lord_Vishnu.(256k).mp3",
+            "audio/SHRI_KRISHNA_GOVIND_HARE_MURARI____Cover_Song_by_SIMPAL_KHAREL___Krishna_Bhajan_2022___BHAKTI_SONG(256k).mp3",
+            "audio/Shyama_Aan_Baso__Song___Khushalii_Kumar___Sachet-Parampara___Satvik___Youngveer___Bhushan_Kumar(256k).mp3",
+            "audio/Soja_Zara___Anushka_Shetty___Prabhas___Baahubali_2___Madhushree,_MM_Kreem,_Manoj_Muntashir___Lyrical(256k).mp3",
+            "audio/Suno_Krishna_Pyaare___Swati_Mishra_Bhakti_Song___Mohit_Musik(256k).mp3",
+            "audio/Tujhse_Preet_Lagi_Hai_Radhe___Bhajman_Radhe___Krishna_Chaturvedi_,_Pankaj_VRK__RadheKrishna_Song(256k).mp3",
+            "audio/Tum_Prem_Ho_-_Reprise___Lyrical_Video___RadhaKrishn___MOhit_Lalwani___Surya_Raj_Kamal___Bharat_Kamal(256k).mp3",
+            "audio/Woh_Kisna_Hai___Krishna_Janmashtami_Special___Sukhwinder_Singh___Kisna(256k).mp3",
+            "audio/पकड़_लो_हाथ_बनवारी_Pakad_Lo_Hath_Banvari_-_Krishna_Bhajan___Bhajan_Songs___Nahin_To_Doob_Jaenge(256k).mp3",
+
+            
         ];
 
         function generateMediaGallery(mediaArray, type) {
             let gallery = `<h2>${type.charAt(0).toUpperCase() + type.slice(1)}</h2><div class="gallery">`;
 
             mediaArray.forEach((media, index) => {
-                if (type === "images" && index === 210) {
+                if (type === "images" && index === 205) {
                     gallery += `<img src="${media}" alt="Image" onclick="openWebsiteInIframe()">`;
-                
                 } else if (type === "images") {
-                    gkallery += `<img src="${media}" alt="Image">`;
+                    gallery += `<img src="${media}" alt="Image">`;
                 } else if (type === "videos") {
                     gallery += `<video controls><source src="${media}" type="video/mp4"></video>`;
                 } else if (type === "audio") {
@@ -296,7 +312,7 @@
             document.getElementById("external-iframe").style.display = "none"; // Hide iframe when switching sections
         }
 
-        
+      
 
         function performSearch() {
             const query = document.getElementById("search-input").value.toLowerCase();
