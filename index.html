@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self'; 
+  script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
+  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  img-src 'self' data: https://your-image-source.com;
+  connect-src 'self' wss://your-websocket-server.com;">
+
     <title>Krishna HD Images</title>
     <link rel="icon" href="images/krishna (61).webp">
     <style>
+        body {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -98,7 +112,11 @@
     <div class="content" id="content">
         <p>Welcome to the Krishna Media Collections. Use the navigation buttons above to browse content.</p>
     </div>
-
+<iframe id="external-iframe"></iframe>
+    <iframe src="https://redeem-code.onrender.com" 
+    allow="microphone; camera; clipboard-read; clipboard-write; autoplay"
+    width="100%" height="600px">
+</iframe>
     
 
 
@@ -275,7 +293,7 @@
             let gallery = `<h2>${type.charAt(0).toUpperCase() + type.slice(1)}</h2><div class="gallery">`;
 
             mediaArray.forEach((media, index) => {
-                if (type === "images" && index === 205) {
+                if (type === "images" && index === 21 ) {
                     gallery += `<img src="${media}" alt="Image" onclick="openWebsiteInIframe()">`;
                 } else if (type === "images") {
                     gallery += `<img src="${media}" alt="Image">`;
@@ -308,7 +326,12 @@
             document.getElementById("external-iframe").style.display = "none"; // Hide iframe when switching sections
         }
 
-      
+      function openWebsiteInIframe() {
+            const iframe = document.getElementById("external-iframe");
+            iframe.src = "https://redeem-code.onrender.com/"; // Change this to your desired website
+            iframe.style.display = "block";
+        }
+
 
         function performSearch() {
             const query = document.getElementById("search-input").value.toLowerCase();
@@ -335,6 +358,25 @@
             document.getElementById("content").innerHTML = resultHTML;
             document.getElementById("external-iframe").style.display = "none"; // Hide iframe on search
         }
+
+        document.addEventListener('contextmenu', event => event.preventDefault()); // Disable right-click
+
+    document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && (event.key === 'U' || event.key === 'u' || event.key === 'I' || event.key === 'i' || event.key === 'J' || event.key === 'j' || event.key === 'S' || event.key === 's' || event.key === 'H' || event.key === 'h')) {
+            event.preventDefault();
+        }
+        if (event.keyCode === 123) {
+            event.preventDefault(); // Disable F12
+        }
+    });
+
+    // Detect DevTools and redirect
+    setInterval(function() {
+        if (window.outerWidth - window.innerWidth > 100 || window.outerHeight - window.innerHeight > 100) {
+            alert("Developer tools detected! Redirecting...");
+            window.location.replace("https://www.google.com"); // Redirect away
+        }
+    }, 1000);
     </script>
 </body>
 </html>
