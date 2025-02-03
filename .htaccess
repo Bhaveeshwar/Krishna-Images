@@ -3,7 +3,7 @@
     Deny from all
     RewriteEngine on
 RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https://yourwebsite.com/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^https://krishna-images.onrender.com/.*$ [NC]
 RewriteRule \.(jpg|jpeg|png|gif|webp|mp4|mp3)$ - [F,NC]
 
 </FilesMatch>
