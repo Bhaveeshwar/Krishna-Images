@@ -1,122 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhaveeshwar V</title>
-    <link rel="icon" href="images/krishna (61).webp">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: rgb(233, 227, 227);
-        }
-        header {
-            background-color: #1d1c20;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        #search-bar {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        #search-bar input {
-            width: 50%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px 0 0 5px;
-            outline: none;
-        }
-        #search-bar button {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #333;
-            border-radius: 0 5px 5px 0;
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-        }
-        #nav-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .nav-button {
-            padding: 5px 10px;
-            background-color: #363738;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 13px;
-        }
-        .nav-button:hover {
-            background-color: #9b9595;
-        }
-        .content {
-            text-align: center;
-            padding: 20px;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        .gallery img, .gallery video, .gallery audio {
-            width: 325px;
-            height: 410px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-        iframe {
-            width: 90%;
-            height: 500px;
-            border: none;
-            display: none;
-            margin-top: 20px;
-        }
-        body {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sows Profit Nest</title>
+  <link rel="icon" href="images/krishna (61).webp">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #e9e3e3;
+      user-select: none;
+    }
+    header {
+      background-color: #1d1c20;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+    }
+    @keyframes fadeInDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    #search-bar {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+    }
+    #search-bar input, #search-bar button {
+      transition: all 0.3s ease;
+    }
+    #search-bar input {
+      width: 50%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+    #search-bar button {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #333;
+      border-radius: 0 5px 5px 0;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+    }
+    #search-bar button:hover {
+      background-color: #555;
+    }
+    #nav-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .nav-button {
+      padding: 5px 10px;
+      background-color: #363738;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+    .nav-button:hover {
+      background-color: #9b9595;
+    }
+    .content {
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .gallery img, .gallery video, .gallery audio {
+      width: 325px;
+      height: 410px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover, .gallery video:hover, .gallery audio:hover {
+      transform: scale(1.05);
+    }
+    iframe {
+      width: 90%;
+      height: 500px;
+      border: none;
+      display: none;
+      margin: 20px auto;
+    }
+    .info-section {
+      background: #f2f2f2;
+      padding: 30px;
+      text-align: center;
+      margin-top: 40px;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .info-section a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+    .info-section a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: #1d1c20;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Bhaveeshwar V </h1>
-    </header>
-
-    <div id="search-bar">
-        <input type="text" id="search-input" placeholder="Search here...">
-        <button onclick="performSearch()">Search</button>
-    </div>
-
-    <div id="nav-buttons">
-        <button class="nav-button" onclick="showSection('all')">All</button>
-        <button class="nav-button" onclick="showSection('images')">Images</button>
-        <button class="nav-button" onclick="showSection('videos')">Videos</button>
-        <button class="nav-button" onclick="showSection('audio')">Audio</button>
-    </div>
-
-    <div class="content" id="content">
-        <p>🤩Welcome to the Bhaveeshwar V . Use the navigation buttons🔼 above to browse content.</p>
-    </div>
-
-    <iframe id="external-iframe"></iframe>
-    <iframe src="https://redeem-code.onrender.com" 
-    allow="microphone; camera; clipboard-read; clipboard-write; autoplay"
-    width="100%" height="600px">
-</iframe>
+  <header>
+    <h1>Sows Profit Nest</h1>
+  </header>  <div id="search-bar">
+    <input type="text" id="search-input" placeholder="Search here...">
+    <button onclick="performSearch()">Search</button>
+  </div>  <div id="nav-buttons">
+    <button class="nav-button" onclick="showSection('all')">All</button>
+    <button class="nav-button" onclick="showSection('images')">Images</button>
+    <button class="nav-button" onclick="showSection('videos')">Videos</button>
+    <button class="nav-button" onclick="showSection('audio')">Audio</button>
+  </div>  <div class="content" id="content">
+    <p>🤩 Welcome to the Sows Profit Nest. Use the navigation buttons 🔼 above to browse content.</p>
+  </div>  <iframe id="external-iframe"></iframe>  <!-- Business Info Section -->  <div class="info-section">
+    <h2>About Us</h2>
+    <p><strong>Sows Profit Nest</strong> is a digital platform showcasing curated devotional content in the form of images, videos, and audio, designed to inspire and spread positivity across audiences. We aim to create a peaceful experience for viewers seeking divine moments online.</p>
+    <h3>Contact Us</h3>
+    <p>Email: <a href="mailto:mrmachan143@gmail.com">mrmachan143@gmail.com</a><br>
+    Mobile: +91 84317 46986</p>
+  </div>  <footer>
+    © 2025 Sows Profit Nest. All rights reserved.
+  </footer> 
 
 
 
